@@ -4,6 +4,7 @@ import { resolve } from 'path'
 export default defineConfig({
     base: '/velocirator/',
     build: {
+        outDir: 'docs', // 👈 ADD THIS LINE
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
