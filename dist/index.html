@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHERION X-1 | Light Year Velocity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;600&display=swap"
+        rel="stylesheet">
+  <script type="module" crossorigin src="/velocirator/assets/main-DCqPn2YI.js"></script>
+  <link rel="stylesheet" crossorigin href="/velocirator/assets/main-D_wq2SfW.css">
+</head>
+
+<body>
+
+    <!-- Canvas Engine -->
+    <canvas id="warp-canvas"></canvas>
+
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 left-0 w-full z-50 p-6 flex justify-between items-center mix-blend-difference content-layer">
+        <div class="text-2xl font-black tracking-widest brand-font text-white flex items-center gap-2">
+            <i data-lucide="triangle" class="w-6 h-6 fill-white rotate-180"></i> AETHERION
+        </div>
+        <div class="hidden md:flex gap-8 text-sm tracking-[0.2em] font-light">
+            <a href="specs.html" class="hover-trigger hover:text-[#00f3ff] transition-colors duration-300">SPECS</a>
+            <a href="engine.html" class="hover-trigger hover:text-[#00f3ff] transition-colors duration-300">ENGINE</a>
+            <a href="reserve.html" class="hover-trigger hover:text-[#00f3ff] transition-colors duration-300">RESERVE</a>
+        </div>
+        <button
+            class="hover-trigger border border-white px-6 py-2 text-xs font-bold tracking-widest hover:bg-white hover:text-black transition-all duration-300">
+            CONNECT
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content-layer">
+
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col justify-center items-center text-center relative px-4 py-20">
+            <p class="text-[#00f3ff] tracking-[0.5em] text-sm mb-4 reveal">PROJECT X-1</p>
+            <h1 class="text-6xl md:text-9xl font-black tracking-tighter mb-2 glitch-text reveal" data-text="VELOCITY">
+                VELOCITY
+            </h1>
+            <h1
+                class="text-6xl md:text-9xl font-black tracking-tighter mb-8 text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-600 reveal">
+                REDEFINED
+            </h1>
+
+            <!-- Image 1: North (Hero) -->
+            <div class="w-full max-w-4xl mb-12 reveal float-anim">
+                <div class="image-card rounded-2xl">
+                    <img src="images/ship-blue.jpg" alt="Aetherion X-1 Exterior">
+                </div>
+            </div>
+
+            <p class="max-w-xl text-gray-400 font-light tracking-wide leading-relaxed reveal">
+                The first civilian-class interstellar vessel powered by the Hawking-3 Null-Point Drive.
+                Experience travel beyond the speed of light.
+            </p>
+
+            <div class="mt-12 flex flex-col items-center gap-4 reveal">
+                <a href="specs.html"
+                    class="hover-trigger border border-[#00f3ff] text-[#00f3ff] px-8 py-3 text-xs font-bold tracking-widest hover:bg-[#00f3ff] hover:text-black transition-all duration-300">
+                    EXPLORE SPECS
+                </a>
+            </div>
+        </section>
+
+        <!-- Stats / Abstract Visualization -->
+        <section id="specs" class="min-h-screen flex items-center justify-center py-24 px-6 relative">
+            <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+
+                <!-- Image 2: West (Specs - Cockpit) -->
+                <div class="relative flex justify-center reveal hover-trigger">
+                    <div class="image-card rounded-xl w-full max-w-md">
+                        <img src="images/cockpit.jpg" alt="Aetherion Cockpit">
+                        <div class="scan-line"></div>
+
+                        <!-- Data Points Overlay -->
+                        <div class="absolute top-[20%] left-[-20px] flex items-center gap-2">
+                            <div class="w-2 h-2 bg-[#00f3ff]"></div>
+                            <span class="text-[10px] text-[#00f3ff] bg-black/50 px-2">COCKPIT /// VISUAL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specs Text -->
+                <div class="space-y-12">
+                    <div class="reveal">
+                        <h2 class="text-4xl md:text-6xl font-bold mb-6">ENGINEERING <br> <span
+                                class="text-[#00f3ff]">IMPOSSIBILITIES</span></h2>
+                        <p class="text-gray-400 border-l-2 border-[#00f3ff] pl-6 py-2">
+                            Traditional propulsion is obsolete. The Aetherion folds space-time, allowing for instant
+                            traversal between coordinates without inertial impact on passengers.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6 reveal">
+                        <div class="glass-panel p-6 glass-card hover-trigger">
+                            <h3 class="text-[#bc13fe] text-3xl font-bold mb-2">1.4c</h3>
+                            <p class="text-xs tracking-widest text-gray-300">CRUISE VELOCITY</p>
+                        </div>
+                        <div class="glass-panel p-6 glass-card hover-trigger">
+                            <h3 class="text-[#00f3ff] text-3xl font-bold mb-2">0g</h3>
+                            <p class="text-xs tracking-widest text-gray-300">INERTIAL DAMPENING</p>
+                        </div>
+                        <div class="glass-panel p-6 glass-card hover-trigger">
+                            <h3 class="text-white text-3xl font-bold mb-2">∞</h3>
+                            <p class="text-xs tracking-widest text-gray-300">RANGE</p>
+                        </div>
+                        <div class="glass-panel p-6 glass-card hover-trigger">
+                            <h3 class="text-white text-3xl font-bold mb-2">AI</h3>
+                            <p class="text-xs tracking-widest text-gray-300">PILOT ASSIST</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Warp Section -->
+        <section id="technology"
+            class="min-h-[80vh] flex flex-col justify-center items-center text-center px-4 relative py-24">
+
+            <!-- Image 3: East/South (Technology - Red Ship) -->
+            <div class="w-full max-w-5xl mb-12 reveal">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="text-left">
+                        <h2 class="text-3xl md:text-5xl font-bold mb-8">THE <span class="text-[#bc13fe]">VOID</span>
+                            AWAITS</h2>
+                        <p class="mb-8 text-gray-300">
+                            Interact with the fabric of space. Hold the "HYPERDRIVE" button below to simulate maximum
+                            reactor output.
+                        </p>
+                        <button id="warp-btn"
+                            class="hover-trigger relative overflow-hidden group bg-transparent border border-[#00f3ff] text-[#00f3ff] px-12 py-4 text-lg font-bold tracking-[0.2em] transition-all hover:bg-[#00f3ff] hover:text-black hover:shadow-[0_0_40px_rgba(0,243,255,0.6)]">
+                            <span class="relative z-10">ENGAGE HYPERDRIVE</span>
+                        </button>
+                    </div>
+                    <div class="image-card rounded-xl float-anim" style="animation-delay: -3s;">
+                        <img src="images/ship-red.jpg" alt="Aetherion Warp Mode">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Footer / CTA -->
+        <section id="reserve" class="h-screen flex flex-col justify-center items-center relative overflow-hidden">
+            <div class="text-center">
+                <h2 class="text-5xl md:text-7xl font-bold mb-8 reveal">RESERVE YOUR <span
+                        class="text-[#00f3ff]">JOURNEY</span></h2>
+                <p class="max-w-2xl text-gray-400 font-light tracking-wide leading-relaxed mb-12 reveal">
+                    The Aetherion X-1 is a limited production vessel. Secure your place among the stars.
+                </p>
+                <a href="reserve.html"
+                    class="hover-trigger border border-white px-8 py-3 text-xs font-bold tracking-widest hover:bg-white hover:text-black transition-all duration-300 reveal">
+                    RESERVE NOW
+                </a>
+            </div>
+        </section>
+
+        <footer class="absolute bottom-0 w-full p-8 flex justify-between text-xs text-gray-600 tracking-widest">
+            <span>© 2099 AETHERION DYNAMICS</span>
+            <span>SYSTEMS NOMINAL</span>
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
