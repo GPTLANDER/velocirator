@@ -1,0 +1,270 @@
+@import "tailwindcss";
+
+:root {
+  --neon-cyan: #00f3ff;
+  --neon-purple: #bc13fe;
+  --void: #030305;
+}
+
+body {
+  margin: 0;
+  background-color: var(--void);
+  color: white;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+  /* Custom cursor */
+}
+
+h1,
+h2,
+h3,
+.brand-font {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-cyan);
+  border-radius: 3px;
+}
+
+/* Canvas Background */
+#warp-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* UI Layers */
+.content-layer {
+  position: relative;
+  z-index: 10;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(10, 10, 15, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+  transform: translateY(-5px);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Custom Cursor */
+#cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--neon-cyan);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background 0.2s;
+  mix-blend-mode: difference;
+}
+
+#cursor.hovered {
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 243, 255, 0.2);
+  border-color: transparent;
+}
+
+/* Glitch Effect Animation */
+.glitch-text {
+  position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--void);
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -1px 0 var(--neon-purple);
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -1px 0 var(--neon-cyan);
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(11px, 9999px, 81px, 0);
+  }
+
+  20% {
+    clip: rect(93px, 9999px, 14px, 0);
+  }
+
+  40% {
+    clip: rect(23px, 9999px, 86px, 0);
+  }
+
+  60% {
+    clip: rect(62px, 9999px, 15px, 0);
+  }
+
+  80% {
+    clip: rect(28px, 9999px, 98px, 0);
+  }
+
+  100% {
+    clip: rect(48px, 9999px, 49px, 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip: rect(65px, 9999px, 100px, 0);
+  }
+
+  20% {
+    clip: rect(10px, 9999px, 85px, 0);
+  }
+
+  40% {
+    clip: rect(40px, 9999px, 20px, 0);
+  }
+
+  60% {
+    clip: rect(80px, 9999px, 5px, 0);
+  }
+
+  80% {
+    clip: rect(25px, 9999px, 60px, 0);
+  }
+
+  100% {
+    clip: rect(5px, 9999px, 90px, 0);
+  }
+}
+
+/* Smooth reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Abstract Shape */
+.ship-silhouette {
+  width: 300px;
+  height: 500px;
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  position: relative;
+  clip-path: polygon(50% 0%, 100% 85%, 100% 100%, 50% 90%, 0% 100%, 0% 85%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 243, 255, 0.1) 100%);
+}
+
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--neon-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan);
+  animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-anim {
+  animation: float 6s ease-in-out infinite;
+}
+
+.image-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s ease;
+}
+
+.image-card:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+  transform: scale(1.02);
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.1);
+}
